@@ -1,0 +1,31 @@
+{% comment %} ALL CHANGES TO THIS LAYOUT MUST BE REFLECTED IN infinite.js {% endcomment %}
+<li>
+  {%- if post.link -%}
+    <a href="{{ post.link }}" target="_blank" rel="noopener noreferrer" class="post">
+  {%- else -%}
+    <a href="{{ post.url | relative_url }}" class="post">
+  {%- endif -%}
+    <h3><span>{{ post.title | escape }}</span></h3>
+    {%- if post.author -%}
+      <span class="author">By: {{ post.author }}</span>
+    {%- endif -%}
+    <span class="date">{{ post.date | date: date_format }}</span>
+    <div class="icons">
+      {%- if post.audio -%}
+        <span class="audio">        
+          <span>
+            <img src="/assets/images/audio.svg" />
+          </span>
+        </span>
+      {%- endif -%}      
+      {%- if post.link -%}
+        <span class="external"></span>
+      {%- endif -%}
+    </div>
+  </a>
+  {%- if post.link -%}
+    <a href="https://web.archive.org/web/*/{{ post.link }}" target="_blank" rel="noopener" class="archive" title="View on archive.org">
+      <img src="/assets/images/archive.svg" />
+    </a>
+  {%- endif -%}
+</li>
