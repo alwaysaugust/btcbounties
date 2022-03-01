@@ -6,26 +6,17 @@
     <a href="{{ post.url | relative_url }}" class="post">
   {%- endif -%}
     <h3><span>{{ post.title | escape }}</span></h3>
-    {%- if post.author -%}
-      <span class="author">By: {{ post.author }}</span>
-    {%- endif -%}
+    <span class="value">
+      {% if post.currency == "USD" %}
+        <img src="/assets/images/dollar.png" alt="USD" />
+      ${{ post.value | number_with_delimiter }} {{ post.currency }}
+      {% else %}
+        <img src="/assets/images/bitcoin-logo-orange.png" alt="Bitcoin" />
+      {{ post.value | number_with_delimiter }} {{ post.currency }}
+      {% endif %}
+    </span>
+    <span class="status">{{ post.status }}</span>
+    <span class="author">{{ post.author }}</span>
     <span class="date">{{ post.date | date: date_format }}</span>
-    <div class="icons">
-      {%- if post.audio -%}
-        <span class="audio">        
-          <span>
-            <img src="/assets/images/audio.svg" />
-          </span>
-        </span>
-      {%- endif -%}      
-      {%- if post.link -%}
-        <span class="external"></span>
-      {%- endif -%}
-    </div>
   </a>
-  {%- if post.link -%}
-    <a href="https://web.archive.org/web/*/{{ post.link }}" target="_blank" rel="noopener" class="archive" title="View on archive.org">
-      <img src="/assets/images/archive.svg" />
-    </a>
-  {%- endif -%}
 </li>

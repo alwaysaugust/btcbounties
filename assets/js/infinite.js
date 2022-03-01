@@ -161,48 +161,36 @@
       let title = document.createElement("h3");
       title.innerHTML = `<span>${item.title}</span>`;
       listItemA.append(title);
+
+      let value = document.createElement("span");
+      value.classList.add("value");
+      if (item.currency === 'USD') {
+        console.log(item.value);
+        value.innerHTML = `<img src="/assets/images/dollar.png" alt="USD" /> $${item.value?.toLocaleString()} USD`;
+      } else {
+        value.innerHTML = `<img src="/assets/images/bitcoin-logo-orange.png" alt="BTC" /> ${item.value?.toLocaleString()} BTC`;
+      }
+      listItemA.append(value);
+
+      let status = document.createElement("span");
+      status.classList.add("status");
+      status.innerHTML = `${item.status}`;
+      listItemA.append(status);
+
       if (item.author) {
         let author = document.createElement("span");
         author.classList.add("author");
-        author.innerHTML = `By: ${item.author}`;
+        author.innerHTML = `${item.author}`;
         listItemA.append(author);
       }
+
       let date = document.createElement("span");
       date.classList.add("date");
       let dateObj = new Date(item.date);
       date.innerHTML = dateObj.toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric'});
       listItemA.append(date);
 
-      let iconsDiv = document.createElement("div");
-      iconsDiv.classList.add('icons');
-      if (item.audio) {
-        let audio = document.createElement("span");
-        audio.classList.add("audio");
-        audio.innerHTML = `<span><img src="/assets/images/audio.svg" /></span>`;
-        iconsDiv.append(audio);
-      }
-
-      if (item.link) {
-        let linkSpan = document.createElement('span');
-        linkSpan.classList.add('external');
-        iconsDiv.append(linkSpan);
-      }
-
-      listItemA.append(iconsDiv);
-      
       listItem.append(listItemA);
-
-      if (item.link) {
-        let linkA = document.createElement('a');
-        linkA.setAttribute('href', `https://web.archive.org/web/*/${item.link}`);
-        linkA.setAttribute('target', '_blank');
-        linkA.setAttribute('rel', 'noopner');
-        linkA.setAttribute('title', 'View on archive.org');
-        linkA.classList.add('archive');
-        linkA.innerHTML = `<img src="/assets/images/archive.svg" />`;
-        listItem.append(linkA);
-      }
-
       spinner.before(listItem);
     });
 

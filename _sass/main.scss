@@ -693,7 +693,11 @@ body {
 }
 
 .page {
-  margin-top: 2rem;
+  margin-top: 1rem;
+
+  &.post {
+    margin-top: 3rem;
+  }
 }
 
 .post-list {
@@ -710,8 +714,8 @@ body {
     }
 
     &.post-list-header {
-      opacity: 0;
-      max-height: 0;
+      //opacity: 0;
+      //max-height: 0;
       position: sticky;
       z-index: 4;
       top: calc(48px + 35px); // .header-bottom AND coinkite banner
@@ -725,7 +729,7 @@ body {
       line-height: calc(22/10);
       transition: opacity 250ms, max-height 250ms;
       background-color: white;
-      height: 25px;
+      height: 35px;
 
       @media all and (max-width: $mediumMax) {
         top: calc(102px + 41px);
@@ -750,7 +754,8 @@ body {
 
       .author,
       .date,
-      .audio {
+      .status,
+      .value {
         flex: 0 0 10%;
         min-width: 10%;
 
@@ -878,6 +883,8 @@ body {
 
       .author,
       .date,
+      .status,
+      .value,
       .icons {
         font-weight: 400;
         font-size: 0.625rem;
@@ -894,6 +901,17 @@ body {
         @media all and (max-width: $smallMax) {
           min-width: unset;
           flex: unset;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .value {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 16px;
+          margin-right: 10px;
         }
       }
 
@@ -947,6 +965,21 @@ body {
 }
 
 .post {
+  .new-tag {
+    padding: 1px 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.375;
+    background: #121212;
+    margin-bottom: 24px;
+    display: inline-block;
+
+    body.dark & {
+      color: #121212;
+      background: #ffffff;
+    }
+  }
+
   h1 {
     font-weight: 700;
     font-size: 2.125rem;
@@ -978,12 +1011,21 @@ body {
       border-color: rgba(#DDDDDD, 0.14);
     }
 
-    .author-date {
+    .value {
+      display: flex;
+      align-items: center;
       margin-right: auto;
       margin-bottom: 0;
-      font-size: 0.625rem;
+      font-size: 1rem;
+      font-weight: 700;
       letter-spacing: -0.18px;
       line-height: calc(22/10);
+      color: #121212;
+
+      img {
+        width: 26px;
+        margin-right: 10px;
+      }
 
       @media all and (max-width: $smallMax) {
         width: 100%;
@@ -993,6 +1035,32 @@ body {
     .social {
       border-right: 1px solid #DDDDDD;
       padding: 11px 18px 11px 0;
+    }
+  }
+
+  .post-meta-author {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15px;
+
+    @media all and (max-width: $smallMax) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 5px 0;
+    }
+
+    body.dark & {
+      border-color: rgba(#DDDDDD, 0.14);
+    }
+
+    .author-date {
+      margin-right: auto;
+      margin-bottom: 0;
+      font-size: 0.625rem;
+      letter-spacing: -0.18px;
+      line-height: calc(22/10);
     }
   }
 
@@ -1038,6 +1106,8 @@ body {
     }
 
     .btn.btn-primary {
+      width: 135px;
+
       svg {
         margin: 0 9px 0 0;
 
@@ -1138,13 +1208,30 @@ body {
       margin: 0 0 35px;
     }
 
-    input {
+    input, textarea, select {
       font-size: 0.75rem;
       padding: 0.625rem 0.75rem;
 
       body.dark & {
         background-color: $almostBlack;
         color: white;
+      }
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position-x: 95%;
+      background-position-y: 10px;
+      background-size: 8%;
+
+      @media all and (max-width: $smallMax) {
+        background-position-x: 97%;
+        background-position-y: 7px;
+        background-size: initial;
       }
     }
   }

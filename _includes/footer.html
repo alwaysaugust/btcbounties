@@ -57,8 +57,8 @@
         </g>
       </svg>
     </button>
-    <h3>Submit Story</h3>
-    <form action="https://formspree.io/f/myyokqeb" method="post">
+    <h3>Submit Bounty</h3>
+    <form action="https://formspree.io/f/mvolalya" method="post">
       <div class="row">
         <div class="col-md mb-3">
           <input type="text" name="first_name" placeholder="First name" class="form-control" />
@@ -67,20 +67,33 @@
           <input type="text" name="last_name" placeholder="Last name" class="form-control" />
         </div>
         <div class="mb-3">
+          <input type="text" name="company" placeholder="Company name" class="form-control" />
+        </div>
+        <div class="mb-3">
           <input type="email" name="email" placeholder="Email address" class="form-control" required />
         </div>
         <div class="mb-3">
-          <input type="text" name="article_title" placeholder="Article title" class="form-control" required />
+          <input type="text" name="bounty_title" placeholder="Bounty Title" class="form-control" required />
+        </div>
+        <div class="col-md mb-3">
+          <select name="currency" class="form-control" required>
+            <option disabled selected>Currency</option>
+            <option value="USD">USD</option>
+            <option value="BTC">BTC</option>
+          </select>
+        </div>
+        <div class="col-md mb-3">
+          <input type="text" name="value" placeholder="Value" class="form-control" required />
         </div>
         <div class="mb-3">
-          <input type="url" name="article_link" placeholder="Article link" class="form-control" required />
+          <textarea name="description" placeholder="Description" rows="7" class="form-control"></textarea>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center">
           <button type="submit" class="btn btn-primary">
             <span class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </span>
-            <span>Submit Story</span>
+            <span>Submit Bounty</span>
           </button>
           <p class="response"></p>
         </div>

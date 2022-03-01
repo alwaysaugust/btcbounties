@@ -9,22 +9,17 @@ layout: default
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
           <header class="post-header">
+            <span class="new-tag">New</span>
             <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
             <div class="post-meta">
-              <p class="author-date">
-                {%- if page.author -%}
-                  {% for author in page.author %}
-                    <strong>Author:</strong> 
-                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                      <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-                      {%- if forloop.last == false %}, {% endif -%}
-                  {% endfor %}
-                  •
-                {%- endif -%}
-                {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
-                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                  {{ page.date | date: date_format }}
-                </time>
+              <p class="value">
+                {% if page.currency == "USD" %}
+                  <img src="/assets/images/dollar.png" alt="USD" />
+                  ${{ page.value | number_with_delimiter }} {{ page.currency }}
+                {% else %}
+                  <img src="/assets/images/bitcoin-logo-orange.png" alt="Bitcoin" />
+                  {{ page.value | number_with_delimiter }} {{ page.currency }}
+                {% endif %}
               </p>
               <ul class="social">
                 {% assign url_placeholder = "<url>" %}
@@ -46,6 +41,24 @@ layout: default
                 {% endfor %}
               </ul>
               <button type="button" class="btn btn-link share-link">Share Link</button>
+            </div>
+
+            <div class="post-meta-author">
+              <p class="author-date">
+                {%- if page.author -%}
+                  {% for author in page.author %}
+                    <strong>Author:</strong>
+                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                      <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+                      {%- if forloop.last == false %}, {% endif -%}
+                  {% endfor %}
+                •
+                {%- endif -%}
+                {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                  {{ page.date | date: date_format }}
+                </time>
+              </p>
             </div>
           </header>
 
@@ -72,20 +85,9 @@ layout: default
         </article>
 
         <div class="submit-cta">
-          <h4>Have a Bitcoin related story you would like to share?</h4>
+          <h4>Interested in this Bounty?</h4>
           <button type="button" class="btn btn-primary">
-            <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g id="White" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="White-Home" transform="translate(-1181.000000, -81.000000)">
-                  <g id="Group-14" transform="translate(-1.000000, 61.000000)">
-                    <g id="Group-11" transform="translate(1164.000000, 3.000000)">
-                      <polygon id="Fill" fill="#FFFFFF" points="24.75 22.25 24.75 17 23.25 17 23.25 22.25 18 22.25 18 23.75 23.25 23.75 23.25 29 24.75 29 24.75 23.75 30 23.75 30 22.25"></polygon>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-            Submit Story
+            Apply
         </div>
       </div>
     </div>

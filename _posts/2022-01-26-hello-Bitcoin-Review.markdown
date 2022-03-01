@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Hello, and welcome to Bitcoin.Review"
-date:   2022-01-25 00:00:00 -0500
+title:  "Lorem ipsum dolor sit consectetur elit sed do tempor sed do eiusmod"
+date:   2022-01-26 00:00:00 -0500
 categories: category2
 author: NVK
-value: 0.12
-currency: BTC
+value: 100000.12
+currency: USD
 status: Discontinued
 ---
 
@@ -34,5 +34,3 @@ Here is a sample of article ideas:
 PS: We also hiring writers seeking to create this kind of content. <a href="mailto:br@coinkite.com">Reach out here</a>
 
 PPS: forgive typos, life is too short to review text too many times.
-
-<iframe src="https://giphy.com/embed/g4xg52H1wrXlS" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/typing-g4xg52H1wrXlS">via GIPHY</a></p>
