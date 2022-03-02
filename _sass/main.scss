@@ -698,6 +698,10 @@ body {
   &.post {
     margin-top: 3rem;
   }
+
+  @media all and (max-width: $smallMax) {
+    margin-top: 2rem;
+  }
 }
 
 .post-list {
