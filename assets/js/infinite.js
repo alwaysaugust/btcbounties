@@ -165,10 +165,9 @@
       let value = document.createElement("span");
       value.classList.add("value");
       if (item.currency === 'USD') {
-        console.log(item.value);
-        value.innerHTML = `<img src="/assets/images/dollar.png" alt="USD" /> $${item.value?.toLocaleString()} USD`;
+        value.innerHTML = `<img src="/assets/images/dollar.png" alt="USD" /> $${Number(item.value).toLocaleString()} USD`;
       } else {
-        value.innerHTML = `<img src="/assets/images/bitcoin-logo-orange.png" alt="BTC" /> ${item.value?.toLocaleString()} BTC`;
+        value.innerHTML = `<img src="/assets/images/bitcoin-logo-orange.png" alt="BTC" /> ${Number(item.value).toLocaleString()} BTC`;
       }
       listItemA.append(value);
 

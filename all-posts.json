@@ -10,6 +10,7 @@ layout: none
       "author": "{{ post.author }}",
       "url": "{{ post.url }}",
       "currency": "{{ post.currency }}",
+      "status": "{{ post.status }}",
       "value": "{{ post.value }}",
       "categories": {{ post.categories | jsonify }}
     }{% unless forloop.last %},{% endunless %}
