@@ -15,10 +15,10 @@ layout: default
               <p class="value">
                 {% if page.currency == "USD" %}
                   <img src="/assets/images/dollar.png" alt="USD" />
-                  ${{ page.value | number_with_delimiter }} {{ page.currency }}
+                  $<span class="price-value">{{page.value}}</span>&nbsp;{{ page.currency }}
                 {% else %}
                   <img src="/assets/images/bitcoin-logo-orange.png" alt="Bitcoin" />
-                  {{ page.value | number_with_delimiter }} {{ page.currency }}
+                  <span class="price-value">{{page.value}}</span>&nbsp; {{ page.currency }}
                 {% endif %}
               </p>
               <ul class="social">

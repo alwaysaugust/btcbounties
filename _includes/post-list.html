@@ -9,10 +9,10 @@
     <span class="value">
       {% if post.currency == "USD" %}
         <img src="/assets/images/dollar.png" alt="USD" />
-      ${{ post.value | number_with_delimiter }} {{ post.currency }}
+        $<span class="price-value">{{post.value}}</span>&nbsp;{{ post.currency }}
       {% else %}
         <img src="/assets/images/bitcoin-logo-orange.png" alt="Bitcoin" />
-      {{ post.value | number_with_delimiter }} {{ post.currency }}
+        <span class="price-value">{{post.value}}</span>&nbsp;{{ post.currency }}
       {% endif %}
     </span>
     <span class="status">{{ post.status }}</span>

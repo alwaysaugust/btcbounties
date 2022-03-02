@@ -110,4 +110,12 @@
     e.preventDefault();
     document.querySelector('.modal-overlay.open').classList.remove('open');
   }
+
+  window.addEventListener('load', (event) => {
+    let priceValueElements = document.querySelectorAll('.price-value');
+    priceValueElements.forEach(function (el) {
+      let value = el.innerHTML;
+      el.innerHTML = new Intl.NumberFormat().format(value);
+    });
+  });
 })();

@@ -4,7 +4,7 @@ title:  "Hello, and welcome to Bitcoin.Review"
 date:   2022-01-25 00:00:00 -0500
 categories: category2
 author: NVK
-value: 0.12
+value: 1000.12
 currency: BTC
 status: Discontinued
 ---
