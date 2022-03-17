@@ -21,7 +21,12 @@ jobs:
           git submodule update --remote
           git add .
           git commit -m "bounties update"
-          git push origin master
+          git push origin main
+
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
 
       - name: Deploy to GH Pages 🚀
         if: ${{ github.event_name != 'pull_request' }}
