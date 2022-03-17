@@ -1111,6 +1111,11 @@ body {
 
     .btn.btn-primary {
       width: 135px;
+      color: #fff;
+
+      body.dark & {
+        color: #121212;
+      }
 
       svg {
         margin: 0 9px 0 0;

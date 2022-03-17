@@ -67,7 +67,7 @@
 
   // submit story modal
   const submitModal = document.querySelector('#submit-modal'),
-    submitModalButtons = document.querySelectorAll('header.header .btn.submit-story, .submit-cta .btn'),
+    submitModalButtons = document.querySelectorAll('header.header .btn.submit-story'),
     submitStoryForm = submitModal.querySelector('form'),
     formResponse = submitModal.querySelector('.response'),
     submitStoryFormButton = submitModal.querySelector('.btn.btn-primary');

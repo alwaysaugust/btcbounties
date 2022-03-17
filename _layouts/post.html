@@ -9,7 +9,7 @@ layout: default
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
           <header class="post-header">
-            <span class="new-tag">New</span>
+            <span class="new-tag">{{ page.status }}</span>
             <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
             <div class="post-meta">
               <p class="value">
@@ -86,8 +86,7 @@ layout: default
 
         <div class="submit-cta">
           <h4>Interested in this Bounty?</h4>
-          <button type="button" class="btn btn-primary">
-            Apply
+          <a href="mailto:{{ page.email }}" class="btn btn-primary">Apply</a>
         </div>
       </div>
     </div>
