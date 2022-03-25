@@ -1,6 +1,9 @@
 name: GH Pages Deploy
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: '0 0,8,16 * * *'
 
