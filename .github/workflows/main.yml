@@ -18,8 +18,8 @@ jobs:
 
       - name: Setup git config
         run: |
-          git config --global user.name "alwaysaugust"
-          git config --global user.email "david@alwaysaugust.co"
+          git config --global user.name "$(git log --format='%ae' HEAD^!)"
+          git config --global user.email "$(git log --format='%an' HEAD^!)"
 
       - name: Fetch Submodule
         run: |
