@@ -11,10 +11,11 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@main
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
           submodules: true
+          token: ${{ secrets.PAT }}
 
       - name: Setup git config
         run: |
